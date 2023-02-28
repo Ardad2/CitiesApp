@@ -33,7 +33,10 @@ struct ContentView: View {
                     ForEach(cityData) { datum in
                         NavigationLink(destination: DetailView(name: datum.name, description: datum.description))
                             {
-                                Text(datum.name)
+                                HStack {
+                                    Text(datum.name)
+                                    Text(datum.description)
+                                }
                             }
                     }.onDelete(perform: {IndexSet in
                         cityData.remove(atOffsets: IndexSet)

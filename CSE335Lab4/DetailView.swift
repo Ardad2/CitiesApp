@@ -15,9 +15,9 @@ struct DetailView: View {
     var description:String
     
     var body: some View {
-        VStack{
-            Text(picture)
-            Text(name)
+        VStack(){
+                Text(name).font(.system(size: 36))
+                Image("\(picture)").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
             Text(description)
         }
     }

@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
 
     @State var cityData = [
-        city(name:"New Delhi", picture: "(PLACEHOLDER)", description: "India"),
-        city(name:"Tempe", picture: "(PLACEHOLDER)", description: "United States"),
-        city(name:"Barcelona", picture: "(PLACEHOLDER)", description: "Spain"),
-        city(name:"Singapore", picture: "(PLACEHOLDER)", description:"Singapore"),
-        city(name:"Cape Town", picture: "(PLACEHOLDER)", description:"South Africa")
+        city(name:"New Delhi", picture: "NewDelhiPicture", description: "The capital city of India."),
+        city(name:"Tempe", picture: "TempePicture", description: "Located near the capital city, Phoenix, of Arizona, United States"),
+        city(name:"Barcelona", picture: "BarcelonaPicture", description: "A city in Spain."),
+        city(name:"Singapore", picture: "SingaporePicture", description:"A city country."),
+        city(name:"Cape Town", picture: "CapeTownPicture", description:"A capital of South Africa.")
     ]
 
     
@@ -35,7 +35,8 @@ struct ContentView: View {
                             {
                                 HStack {
                                     Text(datum.name)
-                                    Text(datum.picture)
+                                    Spacer()
+                                    Image("\(datum.picture)").resizable().aspectRatio(contentMode: .fit).frame(width: 75, height: 75 )
                                 }
                             }
                     }.onDelete(perform: {IndexSet in
@@ -61,7 +62,7 @@ struct ContentView: View {
                     TextField("Description: ", text: $newCityDescription)
 
                     Button("Insert", action: {
-                        let c = city(name: newCityName, picture: "(DEFAULT)", description: newCityDescription)
+                        let c = city(name: newCityName, picture: "DefaultPicture", description: newCityDescription)
                         cityData.append(c)
                             toInsertView = false
    

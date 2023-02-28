@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var lanData = [
+    @State var cityData = [
         city(name:"New Delhi"),
         city(name:"Tempe"),
         city(name:"Barcelona"),
@@ -28,13 +28,13 @@ struct ContentView: View {
         {
     
             List {
-                    ForEach(lanData) { datum in
+                    ForEach(cityData) { datum in
                         NavigationLink(destination: DetailView(name: datum.name))
                             {
                                 Text(datum.name)
                             }
                     }.onDelete(perform: {IndexSet in
-                        lanData.remove(atOffsets: IndexSet)
+                        cityData.remove(atOffsets: IndexSet)
                     })
                     
 
@@ -56,7 +56,7 @@ struct ContentView: View {
 
                     Button("Insert", action: {
                             let c = city(name: data)
-                            lanData.append(c)
+                        cityData.append(c)
                             toInsertView = false
    
                         

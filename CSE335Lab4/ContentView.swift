@@ -26,6 +26,8 @@ struct ContentView: View {
     @State  var type = ""
     @State var sectionType = ["List of Cities visited"]
     
+    @State var invalidString = false;
+    
 
     var body: some View {
         NavigationView
@@ -76,7 +78,7 @@ struct ContentView: View {
                             
                             if (validString == false || newCityName == "")
                             {
-                                
+                                invalidString = true;
                             }
                             else
                             {
@@ -91,6 +93,15 @@ struct ContentView: View {
                     })
                 }, message: {
                     Text("Enter the details of the city you want to add")
+                })
+                .alert("Invalid", isPresented: $invalidString, actions: {
+                    
+                    Button("Okay", role: .cancel, action: {
+                        toInsertView = false;
+                        invalidString = false
+                    })
+                }, message: {
+                    Text("The city name can not be blank!")
                 })
         }
         

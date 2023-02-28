@@ -21,13 +21,12 @@ struct ContentView: View {
     @State var toInsertView = false
     @State var toDeleteView = false
     
-    @State  var newCityName = ""
-    @State var newCityDescription = ""
+    @State private var newCityName = ""
+    @State private var newCityDescription = ""
     @State  var type = ""
     @State var sectionType = ["List of Cities visited"]
     
-    @State private var emptyField = false;
-    
+
     var body: some View {
         NavigationView
         {
@@ -60,15 +59,26 @@ struct ContentView: View {
                         }
                     }
                 }.alert("Insert", isPresented: $toInsertView, actions: {
-                   
-                    
-                    TextField("Name:", text: $newCityName)
-                    TextField("Description: ", text: $newCityDescription)
-                    
+
+                        TextField("Name:", text: $newCityName)
+                        TextField("Description: ", text: $newCityDescription)
 
                         Button("Insert", action: {
                             
-                            if (newCityName != "")
+                            var validString = false;
+                            
+                            for char in newCityName {
+                                if (char != " ")
+                                {
+                                    validString = true;
+                                }
+                            }
+                            
+                            if (validString == false || newCityName == "")
+                            {
+                                
+                            }
+                            else
                             {
                                 let c = city(name: newCityName, picture: "DefaultPicture", description: newCityDescription)
                                 cityData.append(c)

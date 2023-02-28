@@ -18,5 +18,6 @@ struct city: Identifiable
 {
     var id = UUID()
     var name: String
+    var picture: String
     var description: String
 }

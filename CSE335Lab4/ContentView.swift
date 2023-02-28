@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
 
     @State var cityData = [
-        city(name:"New Delhi", description: "India"),
-        city(name:"Tempe", description: "United States"),
-        city(name:"Barcelona", description: "Spain"),
-        city(name:"Singapore", description:"Singapore"),
-        city(name:"Cape Town", description:"South Africa")
+        city(name:"New Delhi", picture: "(PLACEHOLDER)", description: "India"),
+        city(name:"Tempe", picture: "(PLACEHOLDER)", description: "United States"),
+        city(name:"Barcelona", picture: "(PLACEHOLDER)", description: "Spain"),
+        city(name:"Singapore", picture: "(PLACEHOLDER)", description:"Singapore"),
+        city(name:"Cape Town", picture: "(PLACEHOLDER)", description:"South Africa")
     ]
 
     
@@ -31,11 +31,11 @@ struct ContentView: View {
     
             List {
                     ForEach(cityData) { datum in
-                        NavigationLink(destination: DetailView(name: datum.name, description: datum.description))
+                        NavigationLink(destination: DetailView(picture: datum.picture, name: datum.name, description: datum.description))
                             {
                                 HStack {
                                     Text(datum.name)
-                                    Text(datum.description)
+                                    Text(datum.picture)
                                 }
                             }
                     }.onDelete(perform: {IndexSet in
@@ -61,7 +61,7 @@ struct ContentView: View {
                     TextField("Description: ", text: $newCityDescription)
 
                     Button("Insert", action: {
-                        let c = city(name: newCityName, description: newCityDescription)
+                        let c = city(name: newCityName, picture: "(DEFAULT)", description: newCityDescription)
                         cityData.append(c)
                             toInsertView = false
    

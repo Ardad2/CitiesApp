@@ -11,14 +11,18 @@ import SwiftUI
 
 struct DetailView: View {
     var name:String
+    var description:String
     
     var body: some View {
-        Text(name)
+        VStack{
+            Text(name)
+            Text(description)
+        }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(name:"Hi")
+        DetailView(name:"Hi", description:"A")
     }
 }

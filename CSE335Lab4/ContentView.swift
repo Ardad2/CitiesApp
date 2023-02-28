@@ -10,16 +10,18 @@ import SwiftUI
 struct ContentView: View {
 
     @State var cityData = [
-        city(name:"New Delhi"),
-        city(name:"Tempe"),
-        city(name:"Barcelona"),
-        city(name:"Singapore"),
-        city(name:"Cape Town")
+        city(name:"New Delhi", description: "India"),
+        city(name:"Tempe", description: "United States"),
+        city(name:"Barcelona", description: "Spain"),
+        city(name:"Singapore", description:"Singapore"),
+        city(name:"Cape Town", description:"South Africa")
     ]
 
     
     @State var toInsertView = false
-    @State  var data = ""
+    
+    @State  var newCityName = ""
+    @State var newCityDescription = ""
     @State  var type = ""
     @State var sectionType = ["List of Cities visited"]
     
@@ -29,7 +31,7 @@ struct ContentView: View {
     
             List {
                     ForEach(cityData) { datum in
-                        NavigationLink(destination: DetailView(name: datum.name))
+                        NavigationLink(destination: DetailView(name: datum.name, description: datum.description))
                             {
                                 Text(datum.name)
                             }
@@ -52,10 +54,11 @@ struct ContentView: View {
                     }
                 }.alert("Insert", isPresented: $toInsertView, actions: {
                    
-                    TextField("Data:", text: $data)
+                    TextField("Name:", text: $newCityName)
+                    TextField("Description: ", text: $newCityDescription)
 
                     Button("Insert", action: {
-                            let c = city(name: data)
+                        let c = city(name: newCityName, description: newCityDescription)
                         cityData.append(c)
                             toInsertView = false
    

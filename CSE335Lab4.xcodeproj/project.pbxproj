@@ -15,6 +15,7 @@
 		82DB06EF29ADB71D00EF2393 /* CSE335Lab4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB06EE29ADB71D00EF2393 /* CSE335Lab4UITests.swift */; };
 		82DB06F129ADB71D00EF2393 /* CSE335Lab4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB06F029ADB71D00EF2393 /* CSE335Lab4UITestsLaunchTests.swift */; };
 		82DB06FE29ADBC8800EF2393 /* cityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB06FD29ADBC8800EF2393 /* cityModel.swift */; };
+		82DB070029ADC47200EF2393 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DB06FF29ADC47200EF2393 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		82DB06EE29ADB71D00EF2393 /* CSE335Lab4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Lab4UITests.swift; sourceTree = "<group>"; };
 		82DB06F029ADB71D00EF2393 /* CSE335Lab4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Lab4UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		82DB06FD29ADBC8800EF2393 /* cityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityModel.swift; sourceTree = "<group>"; };
+		82DB06FF29ADC47200EF2393 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		82DB06D129ADB71C00EF2393 /* CSE335Lab4 */ = {
 			isa = PBXGroup;
 			children = (
+				82DB06FF29ADC47200EF2393 /* DetailView.swift */,
 				82DB06FD29ADBC8800EF2393 /* cityModel.swift */,
 				82DB06D229ADB71C00EF2393 /* CSE335Lab4App.swift */,
 				82DB06D429ADB71C00EF2393 /* ContentView.swift */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DB06D529ADB71C00EF2393 /* ContentView.swift in Sources */,
+				82DB070029ADC47200EF2393 /* DetailView.swift in Sources */,
 				82DB06D329ADB71C00EF2393 /* CSE335Lab4App.swift in Sources */,
 				82DB06FE29ADBC8800EF2393 /* cityModel.swift in Sources */,
 			);

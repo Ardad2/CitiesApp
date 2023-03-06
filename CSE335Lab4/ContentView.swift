@@ -66,7 +66,7 @@ struct ContentView: View {
                         TextField("Description: ", text: $newCityDescription)
 
                         Button("Insert", action: {
-                            
+                            /*
                             var validString = false;
                             
                             for char in newCityName {
@@ -75,18 +75,19 @@ struct ContentView: View {
                                     validString = true;
                                 }
                             }
+                             
                             
                             if (validString == false || newCityName == "")
                             {
                                 invalidString = true;
                             }
                             else
-                            {
+                            {*/
                                 let c = city(name: newCityName, picture: "DefaultPicture", description: newCityDescription)
                                 cityData.append(c)
                                 toInsertView = false
-                            }
-                        })
+                           // }
+                        }).disabled($newCityName.isEmpty)
                     
                     Button("Cancel", role: .cancel, action: {
                         toInsertView = false
